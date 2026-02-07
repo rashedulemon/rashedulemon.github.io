@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Automation - EEE Portfolio</title>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Smart Home Automation System</h1>
+            <p class="subtitle">IoT | Embedded Systems | Energy Management</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <a href="index.html" class="button" style="margin-bottom: 20px;">&larr; Back to Portfolio</a>
+
+                <div class="project-detail">
+                    <img src="assets/images/smart-home-placeholder.jpg" alt="Smart Home System Diagram"
+                        class="project-main-image"
+                        style="width:100%; max-width:800px; height:auto; margin: 0 auto 30px; display:block; border-radius:5px; border:1px solid #ddd;">
+
+                    <h2>Project Overview</h2>
+                    <p>Designed and implemented a comprehensive home automation system focused on energy efficiency and
+                        user convenience. The system utilizes the ESP32 microcontroller to manage various household
+                        appliances remotely via a web interface.</p>
+
+                    <h3>Problem Statement</h3>
+                    <p>Inefficient energy usage in residential buildings leads to higher utility costs and increased
+                        carbon footprint. Existing solutions are often expensive or lack customization for specific user
+                        needs.</p>
+
+                    <h3>Methodology</h3>
+                    <ul>
+                        <li><strong>Hardware:</strong> ESP32 Microcontroller, Relay Modules, Current Sensors (ACS712),
+                            Temperature Sensors (DHT11).</li>
+                        <li><strong>Software:</strong> C++ (Arduino IDE), Blynk IoT Platform for mobile control.</li>
+                        <li><strong>Communication:</strong> Wi-Fi (MQTT Protocol).</li>
+                    </ul>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><strong>Remote Control:</strong> Toggle appliances from anywhere using a smartphone app.
+                        </li>
+                        <li><strong>Automated Scheduling:</strong> Set timers for lights and fans to operate only when
+                            needed.</li>
+                        <li><strong>Energy Monitoring:</strong> Real-time tracking of power consumption with visual
+                            graphs.</li>
+                        <li><strong>Voice Control Integration:</strong> Compatible with Google Assistant and Amazon
+                            Alexa.</li>
+                    </ul>
+
+                    <h3>Outcome</h3>
+                    <p>The prototype demonstrated a potential reduction in energy consumption by approximately 15% in
+                        simulated test scenarios. The system successfully managed multiple loads with a response time of
+                        under 200ms.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> ⚡ Emon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script/main.js"></script>
+</body>
+
+</html>

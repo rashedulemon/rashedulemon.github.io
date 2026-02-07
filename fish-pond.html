@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fish Pond Management - EEE Portfolio</title>
+    <!-- Google Fonts: Roboto -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Smart Fish Pond Management System</h1>
+            <p class="subtitle">IoT | Machine Learning | Aquaculture</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <a href="index.html" class="button" style="margin-bottom: 20px;">&larr; Back to Portfolio</a>
+
+                <div class="project-detail">
+                    <img src="assets/images/fish-pond-placeholder.jpg" alt="Fish Pond Management System Diagram"
+                        class="project-main-image"
+                        style="width:100%; max-width:800px; height:auto; margin: 0 auto 30px; display:block; border-radius:5px; border:1px solid #ddd;">
+
+                    <h2>Project Overview</h2>
+                    <p>Developed an intelligent system for monitoring and managing aquatic environments to optimize fish
+                        growth. The project integrates traditional sensor networks with machine learning algorithms for
+                        predictive analysis.</p>
+
+                    <h3>Problem Statement</h3>
+                    <p>Maintaining optimal water quality is crucial for aquaculture productivity. Manual testing is
+                        labor-intensive and inaccurate, often leading to poor yield or disease outbreaks.</p>
+
+                    <h3>Methodology</h3>
+                    <ul>
+                        <li><strong>Sensors:</strong> pH sensor, DS18B20 (Water Temperature), Dissolved Oxygen sensor.
+                        </li>
+                        <li><strong>Microcontroller:</strong> ESP32 for data collection and cloud transmission.</li>
+                        <li><strong>Machine Learning:</strong> Python (scikit-learn) used to train a regression model on
+                            collected data to predict fish growth rates based on environmental parameters.</li>
+                        <li><strong>Platform:</strong> Custom web dashboard for real-time monitoring.</li>
+                    </ul>
+
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li><strong>Real-time Monitoring:</strong> Continuous tracking of critical water parameters.
+                        </li>
+                        <li><strong>Predictive Analytics:</strong> ML model forecasts growth trends, enabling proactive
+                            adjustments to feeding and aeration.</li>
+                        <li><strong>Alert System:</strong> Instant notifications via SMS/Email if parameters deviate
+                            from safe ranges.</li>
+                        <li><strong>Data Logging:</strong> Historical data storage for long-term analysis.</li>
+                    </ul>
+
+                    <h3>Outcome</h3>
+                    <p>The system successfully monitored water parameters with high accuracy. The predictive model
+                        achieved an R-squared value of 0.85 in correlating environmental factors with fish growth,
+                        suggesting significant potential for yield optimization.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> ⚡ Emon. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script/main.js"></script>
+</body>
+
+</html>
