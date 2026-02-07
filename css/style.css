@@ -237,6 +237,10 @@ header h1 {
     color: var(--white);
 }
 
+.button i {
+    margin-right: 8px;
+}
+
 /* Footer */
 footer {
     background-color: var(--primary-color);
