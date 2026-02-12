@@ -19,13 +19,34 @@
 
 <body>
 
-    <header>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Emon<span class="dot">.</span></a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
         <div class="container">
-            <img src="assets/images/main.jpg" alt="MD. Rashedul Islam Emon" class="profile-img">
+            <div class="profile-wrapper">
+                <img src="assets/images/main.jpg" alt="MD. Rashedul Islam Emon" class="profile-img">
+            </div>
             <h1>MD. Rashedul Islam Emon</h1>
             <p class="subtitle">EEE Undergraduate | VLSI | Power Systems</p>
+            <div class="hero-cta">
+                <a href="#projects" class="button"><i class="fas fa-project-diagram"></i> View Projects</a>
+                <a href="#contact" class="button start-project"><i class="fas fa-paper-plane"></i> Let's Talk</a>
+            </div>
         </div>
-    </header>
+    </section>
 
     <main>
         <section id="about" class="section">
