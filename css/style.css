@@ -410,6 +410,27 @@ footer {
     margin-bottom: 0;
 }
 
+/* Experience Grid (Split View) */
+.experience-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.column-title {
+    font-size: 1.2rem;
+    color: #444;
+    /* Darker color for visibility */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.column-title i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     h1 {
@@ -427,5 +448,10 @@ footer {
 
     .project-grid {
         grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
