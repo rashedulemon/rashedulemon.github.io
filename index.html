@@ -5,39 +5,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rashedul Islam Emon</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <!-- Google Fonts: Roboto -->
+    <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/style.css?v=1.0">
+    <link rel="stylesheet" href="css/style.css?v=2.0">
 </head>
 
 <body>
 
-    <header>
+    <!-- Floating Dock Navigation -->
+    <nav class="floating-dock">
+        <div class="dock-container">
+            <a href="#hero" class="dock-item" aria-label="Home">
+                <i class="fas fa-home"></i>
+                <span class="tooltip">Home</span>
+            </a>
+            <a href="#about" class="dock-item" aria-label="About">
+                <i class="fas fa-user"></i>
+                <span class="tooltip">About</span>
+            </a>
+            <a href="#projects" class="dock-item" aria-label="Projects">
+                <i class="fas fa-code-branch"></i>
+                <span class="tooltip">Projects</span>
+            </a>
+            <a href="#resume" class="dock-item" aria-label="Resume">
+                <i class="fas fa-file-alt"></i>
+                <span class="tooltip">Resume</span>
+            </a>
+            <a href="#contact" class="dock-item" aria-label="Contact">
+                <i class="fas fa-paper-plane"></i>
+                <span class="tooltip">Contact</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="electronics-bg">
+            <div class="grid-pattern"></div>
+            <!-- PCB Circuit Animation -->
+            <svg class="circuit-board" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="trace-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:rgba(0, 113, 227, 0);stop-opacity:0" />
+                        <stop offset="50%" style="stop-color:rgba(0, 113, 227, 0.4);stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:rgba(0, 113, 227, 0);stop-opacity:0" />
+                    </linearGradient>
+                </defs>
+                <!-- Circuit Traces (Left & Right) -->
+                <path class="circuit-trace" d="M0,160 L100,160 L150,110 L400,110" />
+                <circle class="circuit-pad" cx="400" cy="110" r="3" />
+
+                <path class="circuit-trace delay-1" d="M1440,200 L1340,200 L1290,250 L1000,250" />
+                <circle class="circuit-pad delay-1" cx="1000" cy="250" r="3" />
+
+                <path class="circuit-trace delay-2" d="M0,280 L200,280 L250,230 L500,230" />
+                <circle class="circuit-pad delay-2" cx="500" cy="230" r="3" />
+
+                <path class="circuit-trace delay-3" d="M1440,60 L1200,60 L1150,110 L900,110" />
+                <circle class="circuit-pad delay-3" cx="900" cy="110" r="3" />
+            </svg>
+        </div>
         <div class="container">
-            <img src="assets/images/main.jpg" alt="MD. Rashedul Islam Emon" class="profile-img">
+            <div class="profile-wrapper">
+                <img src="assets/images/main.jpg" alt="MD. Rashedul Islam Emon" class="profile-img">
+            </div>
             <h1>MD. Rashedul Islam Emon</h1>
             <p class="subtitle">EEE Undergraduate | VLSI | Power Systems</p>
+            <div class="hero-cta">
+                <a href="#projects" class="button"><i class="fas fa-project-diagram"></i> View Projects</a>
+                <a href="#contact" class="button start-project"><i class="fas fa-paper-plane"></i> Let's Talk</a>
+            </div>
         </div>
-    </header>
+    </section>
 
     <main>
         <section id="about" class="section">
             <div class="container">
                 <h2>About Me</h2>
-                <div class="content-box">
-                    <p>I am an undergraduate student in Electrical and Electronic Engineering with a strong interest in
-                        power systems, embedded systems, and applied machine learning. My academic work focuses on
-                        understanding core engineering principles and applying them through hands-on projects and
-                        simulations. I have experience working with tools such as ESP32, MATLAB, Proteus, Cadence
-                        Virtuoso and Python for solving practical engineering problems. I am motivated to continue
-                        learning, conducting research, and developing solutions that bridge theory and real-world
-                        applications.</p>
+
+                <div class="bento-grid">
+                    <!-- Bio Card (Large) -->
+                    <div class="bento-card bio-card">
+                        <h3><i class="fas fa-user-astronaut"></i> Who I Am</h3>
+                        <p>I am an Electrical and Electronic Engineering undergraduate driven by the fusion of
+                            <strong>Power Systems</strong>, <strong>VLSI</strong>, and <strong>Machine
+                                Learning</strong>.
+                        </p>
+                        <p>My work bridges the gap between theoretical principles and real-world applications, from
+                            designing efficient circuits to simulating complex power grids. I thrive on solving
+                            practical engineering problems with tools like <strong>Microcontroller</strong>,
+                            <strong>MATLAB</strong>, and <strong>Cadence Virtuoso</strong>.
+                        </p>
+                    </div>
+
+                    <!-- Focus Card -->
+                    <div class="bento-card focus-card">
+                        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+                        <h4>Core Focus</h4>
+                        <p>Renewable Energy & Smart Grids</p>
+                    </div>
+
+                    <!-- Education Card -->
+                    <div class="bento-card edu-card">
+                        <div class="card-icon"><i class="fas fa-university"></i></div>
+                        <div class="edu-text">
+                            <h4>Varendra University</h4>
+                            <p>B.Sc. in EEE (3.92/4.00)</p>
+                        </div>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="bento-card loc-card">
+                        <div class="map-bg"></div>
+                        <div class="loc-content">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Rajshahi, Bangladesh</p>
+                            <span class="status-badge">Open to Work</span>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Scroller -->
+                    <div class="bento-card tech-card">
+                        <h4>Tech Stack</h4>
+                        <div class="tech-scroller">
+                            <div class="tech-track">
+                                <i class="fab fa-python"></i>
+                                <i class="fas fa-microchip"></i> <!-- Arduino/ESP32 -->
+                                <i class="fas fa-wave-square"></i> <!-- MATLAB/Simulink -->
+                                <i class="fas fa-network-wired"></i> <!-- VLSI/Cadence -->
+                                <i class="fab fa-cuttlefish"></i>
+                                <!-- Duplicate for smooth loop -->
+                                <i class="fab fa-python"></i>
+                                <i class="fas fa-microchip"></i>
+                                <i class="fas fa-wave-square"></i>
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -46,93 +157,89 @@
             <div class="container">
                 <h2>Projects</h2>
                 <div class="project-grid">
-                    <a href="op-amp.html" class="project-card-link">
-                        <article class="project-card">
-                            <img src="assets/images/op-amp_Schemetic.jpg" alt="Op-amp Schematic"
-                                class="project-card-img">
-                            <div class="project-content">
-                                <h3>Design and Analysis of Op-amp AC Response in Cadence Virtuoso</h3>
-                                <p class="problem"><i class="fas fa-exclamation-triangle"
-                                        style="color: var(--primary-color);"></i> <strong>Objective:</strong> Analyze AC
-                                    response and proper stability of an Op-amp.</p>
-                                <p class="tools"><i class="fas fa-tools" style="color: var(--primary-color);"></i>
-                                    <strong>Tools:</strong> Cadence Virtuoso, ADE
-                                </p>
-                                <p class="outcome"><i class="fas fa-check-circle"
-                                        style="color: var(--primary-color);"></i>
-                                    <strong>Outcome:</strong> Verified high gain and stable phase margin through AC
-                                    simulation.
-                                </p>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="smart-home.html" class="project-card-link">
-                        <article class="project-card">
-                            <img src="assets/images/smart-home.jpg" alt="Smart Home Automation"
-                                class="project-card-img">
-                            <div class="project-content">
-                                <h3>Smart Home Automation System</h3>
-                                <p class="problem"><i class="fas fa-exclamation-triangle"
-                                        style="color: var(--primary-color);"></i> <strong>Problem:</strong> Complete
-                                    automation of home appliances</p>
-                                <p class="tools"><i class="fas fa-tools" style="color: var(--primary-color);"></i>
-                                    <strong>Tools:</strong> ESP32, IOT, C++
-                                </p>
-                                <p class="outcome"><i class="fas fa-check-circle"
-                                        style="color: var(--primary-color);"></i>
-                                    <strong>Outcome:</strong> Engineered an IoT-based automated home system
-                                    utilizing ESP32, reducing simulated daily energy consumption through optimized
-                                    appliance scheduling.
-                                </p>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="fish-pond.html" class="project-card-link">
-                        <article class="project-card">
-                            <img src="assets/images/fish-pond.jpg" alt="Smart Fish Pond Management"
-                                class="project-card-img">
-                            <div class="project-content">
-                                <h3>Smart Fish Pond Management System</h3>
-                                <p class="problem"><i class="fas fa-exclamation-triangle"
-                                        style="color: var(--primary-color);"></i> <strong>Problem:</strong>Measurement
-                                    of
-                                    fish pond parameters and apply
-                                    machine learning algorithm for prediction of fish growth.</p>
-                                <p class="tools"><i class="fas fa-tools" style="color: var(--primary-color);"></i>
-                                    <strong>Tools:</strong> Python, IoT, C++, ESP32
-                                </p>
-                                <p class="outcome"><i class="fas fa-check-circle"
-                                        style="color: var(--primary-color);"></i>
-                                    <strong>Outcome:</strong> Developed a smart fish pond management system that
-                                    measures water parameters and applies machine learning algorithms to predict fish
-                                    growth.
-                                </p>
-                            </div>
-                        </article>
-                    </a>
-                    <a href="line-follower.html" class="project-card-link">
-                        <article class="project-card">
-                            <img src="assets/images/line-follower.jpg" alt="Line Follower Robot"
-                                class="project-card-img">
-                            <div class="project-content">
-                                <h3>Line Follower Robot</h3>
-                                <p class="problem"><i class="fas fa-exclamation-triangle"
-                                        style="color: var(--primary-color);"></i> <strong>Problem:</strong> Autonomous
-                                    navigation in industrial
-                                    environments
-                                    requires reliable sensor integration.</p>
-                                <p class="tools"><i class="fas fa-tools" style="color: var(--primary-color);"></i>
-                                    <strong>Tools:</strong> Arduino, IR Sensors, Python
-                                </p>
-                                <p class="outcome"><i class="fas fa-check-circle"
-                                        style="color: var(--primary-color);"></i>
-                                    <strong>Outcome:</strong> Built a robot capable of navigating a complex
-                                    track
-                                    with high precision and speed.
-                                </p>
-                            </div>
-                        </article>
-                    </a>
+                    <div class="project-grid">
+                        <a href="op-amp.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="card-glow"></div>
+                                <img src="assets/images/op-amp_Schemetic.jpg" alt="Op-amp Schematic"
+                                    class="project-card-img">
+                                <div class="project-content">
+                                    <h3>Op-amp AC Response</h3>
+                                    <p class="project-desc">Analyzed AC response and stability using Cadence Virtuoso.
+                                    </p>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Cadence Virtuoso</span>
+                                        <span class="tech-tag">ADE</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <span class="outcome-text"><i class="fas fa-check-circle"></i> High Gain
+                                            Verified</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="smart-home.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="card-glow"></div>
+                                <img src="assets/images/smart-home.jpg" alt="Smart Home Automation"
+                                    class="project-card-img">
+                                <div class="project-content">
+                                    <h3>Smart Home Automation</h3>
+                                    <p class="project-desc">IoT-based home system for optimized energy scheduling.</p>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">ESP32</span>
+                                        <span class="tech-tag">IoT</span>
+                                        <span class="tech-tag">C++</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <span class="outcome-text"><i class="fas fa-check-circle"></i> Energy
+                                            Efficient</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="fish-pond.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="card-glow"></div>
+                                <img src="assets/images/fish-pond.jpg" alt="Smart Fish Pond Management"
+                                    class="project-card-img">
+                                <div class="project-content">
+                                    <h3>Smart Fish Pond</h3>
+                                    <p class="project-desc">ML-powered water monitoring and growth prediction system.
+                                    </p>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">IoT</span>
+                                        <span class="tech-tag">C++</span>
+                                        <span class="tech-tag">ESP32</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <span class="outcome-text"><i class="fas fa-chart-line"></i> Growth
+                                            Prediction</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                        <a href="line-follower.html" class="project-card-link">
+                            <article class="project-card">
+                                <div class="card-glow"></div>
+                                <img src="assets/images/line-follower.jpg" alt="Line Follower Robot"
+                                    class="project-card-img">
+                                <div class="project-content">
+                                    <h3>Line Follower Robot</h3>
+                                    <p class="project-desc">Autonomous bot with PID control for precise navigation.</p>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">Arduino Nano</span>
+                                        <span class="tech-tag">IR Sensors</span>
+                                        <span class="tech-tag">C++</span>
+                                    </div>
+                                    <div class="project-footer">
+                                        <span class="outcome-text"><i class="fas fa-tachometer-alt"></i> High
+                                            Precision</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -325,13 +432,35 @@
 
         <section id="contact" class="section">
             <div class="container">
-                <h2>Contact</h2>
-                <div class="contact-links">
-                    <a href="mailto:emonrasedul@gmail.com" class="button"><i class="fas fa-envelope"></i> Email Me</a>
-                    <a href="https://github.com/rashedulemon" target="_blank" class="button"><i
-                            class="fab fa-github"></i> GitHub</a>
-                    <a href="https://www.linkedin.com/in/rashedulemon/" target="_blank" class="button"><i
-                            class="fab fa-linkedin"></i> LinkedIn</a>
+                <h2>Let's Connect</h2>
+                <div class="contact-hub">
+                    <!-- Email Card -->
+                    <a href="mailto:emonrasedul@gmail.com" class="contact-card email-card">
+                        <div class="icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Me</h3>
+                        <p>emonrasedul@gmail.com</p>
+                    </a>
+
+                    <!-- GitHub Card -->
+                    <a href="https://github.com/rashedulemon" target="_blank" class="contact-card github-card">
+                        <div class="icon-box">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <h3>GitHub</h3>
+                        <p>Check out my code</p>
+                    </a>
+
+                    <!-- LinkedIn Card -->
+                    <a href="https://www.linkedin.com/in/rashedulemon/" target="_blank"
+                        class="contact-card linkedin-card">
+                        <div class="icon-box">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <h3>LinkedIn</h3>
+                        <p>Let's connect professionally</p>
+                    </a>
                 </div>
             </div>
         </section>
