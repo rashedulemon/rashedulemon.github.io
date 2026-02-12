@@ -6,6 +6,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     console.log('EEE Portfolio Loaded Successfully');
+
+    // Floating Dock Active State
+    const sections = document.querySelectorAll('section');
+    const dockItems = document.querySelectorAll('.dock-item');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Remove active class from all items
+                dockItems.forEach(item => item.classList.remove('active'));
+
+                // Add active class to the item corresponding to the section
+                const activeId = entry.target.getAttribute('id');
+                const activeItem = document.querySelector(`.dock-item[href="#${activeId}"]`);
+
+                if (activeItem) {
+                    activeItem.classList.add('active');
+                }
+            }
+        });
+    }, {
+        threshold: 0.3, // Trigger when 30% of section is visible
+        rootMargin: "-10% 0px -10% 0px" // Shrink view area to center focus
+    });
+
+    sections.forEach(section => {
+        observer.observe(section);
+    });
 });
 
 // Tabbed Resume Section
