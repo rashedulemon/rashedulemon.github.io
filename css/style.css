@@ -169,12 +169,14 @@ html {
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.dock-item:hover {
-    color: var(--primary-color);
-    background: rgba(255, 255, 255, 0.5);
-    transform: translateY(-8px) scale(1.1);
-    /* Jumps up like macOS dock */
-    box-shadow: 0 5px 15px rgba(0, 113, 227, 0.15);
+@media (hover: hover) {
+    .dock-item:hover {
+        color: var(--primary-color);
+        background: rgba(255, 255, 255, 0.5);
+        transform: translateY(-8px) scale(1.1);
+        /* Jumps up like macOS dock */
+        box-shadow: 0 5px 15px rgba(0, 113, 227, 0.15);
+    }
 }
 
 .dock-item.active {
@@ -200,10 +202,12 @@ html {
     white-space: nowrap;
 }
 
-.dock-item:hover .tooltip {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-    bottom: 130%;
+@media (hover: hover) {
+    .dock-item:hover .tooltip {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+        bottom: 130%;
+    }
 }
 
 .dock-item::after {
