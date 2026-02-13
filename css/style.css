@@ -1246,17 +1246,34 @@ footer {
 }
 
 /* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+
     h1 {
         font-size: 2.2rem;
+    }
+
+    .subtitle {
+        font-size: 1.1rem;
     }
 
     .container {
         padding: 0 20px;
     }
 
-    .contact-links {
+    /* Hero Adjustments */
+    .profile-wrapper {
+        width: 140px;
+        height: 140px;
+        margin-bottom: 20px;
+    }
+
+    .hero-cta {
         flex-direction: column;
+        gap: 15px;
         align-items: center;
         width: 100%;
     }
@@ -1264,25 +1281,126 @@ footer {
     .button {
         width: 100%;
         text-align: center;
+        justify-content: center;
     }
 
-    .project-grid {
-        grid-template-columns: 1fr;
+    /* Navigation Dock */
+    .floating-dock {
+        bottom: 20px;
+        width: 90%;
+        max-width: 360px;
     }
 
-    .experience-grid {
+    .dock-container {
+        padding: 10px 15px;
+        gap: 10px;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .dock-icon {
+        font-size: 1.3rem;
+        padding: 8px;
+    }
+
+    /* Grids */
+    .project-grid,
+    .experience-grid,
+    .certificates-grid,
+    .skills-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
 
+    /* Contact Hub */
+    .contact-hub {
+        gap: 20px;
+        flex-direction: column;
+    }
+
+    .contact-card {
+        width: 100%;
+        height: auto;
+        padding: 25px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        text-align: left;
+    }
+
+    .icon-box {
+        margin-bottom: 0;
+        font-size: 2rem;
+    }
+
+    .contact-card:hover {
+        transform: translateY(-5px);
+    }
+
+    /* Tabs - Compact Horizontal Scroll */
     .tab-buttons {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 8px;
+        /* Tighter gap */
+        background: transparent;
+        padding: 0 10px;
+        /* Slight padding for scroll ends */
+        margin-bottom: 25px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        /* Firefox */
+    }
+
+    .tab-buttons::-webkit-scrollbar {
+        display: none;
     }
 
     .tab-btn {
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid var(--border-color);
+        width: auto;
+        flex: 0 0 auto;
+        margin-bottom: 0;
+        border-radius: 99px;
+        background: rgba(0, 0, 0, 0.03);
+        padding: 8px 16px;
+        /* Reduced padding */
+        font-size: 0.85rem;
+        /* Smaller font */
+        white-space: nowrap;
+        /* Prevent text wrap */
+        border: 1px solid rgba(0, 0, 0, 0.02);
+    }
+
+    .tab-btn i {
+        margin-right: 6px;
+        /* Tighter icon spacing */
+    }
+
+    .tab-btn.active {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Floating Back Button */
+    .floating-back-btn {
+        bottom: 90px;
+        /* Above the dock */
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .project-card-img {
+        height: 180px;
     }
 }
 
