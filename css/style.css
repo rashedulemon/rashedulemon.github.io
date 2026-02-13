@@ -169,14 +169,13 @@ html {
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-@media (hover: hover) {
-    .dock-item:hover {
-        color: var(--primary-color);
-        background: rgba(255, 255, 255, 0.5);
-        transform: translateY(-8px) scale(1.1);
-        /* Jumps up like macOS dock */
-        box-shadow: 0 5px 15px rgba(0, 113, 227, 0.15);
-    }
+
+.dock-item:hover {
+    color: var(--primary-color);
+    background: rgba(255, 255, 255, 0.5);
+    transform: translateY(-8px) scale(1.1);
+    /* Jumps up like macOS dock */
+    box-shadow: 0 5px 15px rgba(0, 113, 227, 0.15);
 }
 
 .dock-item.active {
@@ -202,12 +201,10 @@ html {
     white-space: nowrap;
 }
 
-@media (hover: hover) {
-    .dock-item:hover .tooltip {
-        opacity: 1;
-        transform: translateX(-50%) scale(1);
-        bottom: 130%;
-    }
+.dock-item:hover .tooltip {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    bottom: 130%;
 }
 
 .dock-item::after {
@@ -363,7 +360,7 @@ html {
 }
 
 .status-badge {
-    background: #34c759;
+    background: #0077ed;
     /* Apple Green */
     color: white;
     padding: 4px 12px;
@@ -1257,7 +1254,8 @@ footer {
     }
 
     h1 {
-        font-size: 2.2rem;
+        font-size: 1.8rem;
+        /* Smaller for better fit */
     }
 
     .subtitle {
