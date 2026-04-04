@@ -167,6 +167,11 @@ html {
     font-size: 1.2rem;
     background: transparent;
     transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    pointer-events: auto;
+}
+
+.dock-item i {
+    pointer-events: none; /* Prevent icon from stealing hover events */
 }
 
 
@@ -236,10 +241,25 @@ html {
     justify-content: center;
 }
 
+.bento-card > * {
+    pointer-events: none; /* Prevent children from interfering with card hover */
+}
+
 .bento-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-hover);
     border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* Prevent flickering at the bottom edge when card lifts */
+.bento-card:hover::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 15px; 
+    pointer-events: auto;
 }
 
 /* 1. Bio Card (Large: Spans 2 cols, 2 rows) */
@@ -613,13 +633,11 @@ html {
 }
 
 .profile-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
     object-fit: cover;
     display: block;
     box-shadow: none;
-    /* Shadow handled by wrapper */
+    pointer-events: none; /* Prevent flickering on scale */
+    will-change: transform;
 }
 
 .profile-wrapper:hover {
@@ -792,9 +810,9 @@ a[href="#projects"].button:hover {
     object-fit: cover;
     display: block;
     border-bottom: 1px solid rgba(0, 0, 0, 0.03);
-    z-index: 1;
-    position: relative;
     transition: transform 0.5s ease;
+    pointer-events: none; /* Prevent flickering on card scale */
+    will-change: transform;
 }
 
 
@@ -1407,6 +1425,202 @@ footer {
 }
 
 /* Floating Back Button (Detail Pages) */
+
+/* Recent Activity Section */
+#activity .container {
+    max-width: 900px; /* Tighter for the vertical stack */
+}
+
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.activity-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--card-bg);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 16px 25px;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-soft);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.activity-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 113, 227, 0.3);
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 50; /* Ensure active card is on top of others */
+}
+
+.activity-content {
+    flex: 1;
+}
+
+.activity-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    letter-spacing: -0.01em;
+}
+
+.activity-desc {
+    font-size: 0.88rem;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+.activity-date {
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+.activity-icon-box {
+    width: 80px; /* Rectangular size as requested */
+    height: 52px;
+    background: rgba(0, 113, 227, 0.08);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 20px;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(0, 113, 227, 0.1);
+    position: relative;
+}
+
+.activity-icon-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    position: relative;
+    z-index: 1;
+    pointer-events: none; /* Prevents flickering by ensuring the container handles all hover events */
+    will-change: transform; /* Performance optimization */
+    backface-visibility: hidden; /* Prevent jitter */
+}
+
+.zoom-hint {
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    background: rgba(255, 255, 255, 0.85);
+    color: var(--primary-color);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 5;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0.7;
+}
+
+.activity-icon-box:hover .zoom-hint {
+    opacity: 0;
+    transform: scale(0.5);
+}
+.activity-icon-box:hover img {
+    transform: scale(4); 
+    z-index: 9999; 
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+}
+
+.activity-card:hover .activity-icon-box {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 5px 20px rgba(0, 113, 227, 0.3);
+}
+
+/* Hidden State & Reveal Animation */
+.activity-card.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.activity-card.reveal {
+    display: flex;
+    animation: activityReveal 0.6s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes activityReveal {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.activity-footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button-secondary {
+    background: rgba(0, 113, 227, 0.08);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    padding: 8px 18px;
+    font-size: 0.85rem;
+    border-radius: 10px;
+}
+
+.button-secondary:hover {
+    background: rgba(0, 113, 227, 0.15);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    .activity-card {
+        padding: 20px;
+        flex-direction: row; /* Keep it horizontal */
+    }
+    
+    .activity-icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+        margin-left: 15px;
+    }
+    
+    .activity-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .activity-bar {
+        width: 80px;
+    }
+}
+
 .floating-back-btn {
     position: fixed;
     bottom: 30px;
@@ -1421,12 +1635,13 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     z-index: 1000;
     text-decoration: none;
+}
+
+.floating-back-btn i {
+    pointer-events: none;
 }
 
 .floating-back-btn:hover {
@@ -1436,3 +1651,16 @@ footer {
     box-shadow: 0 15px 40px rgba(0, 113, 227, 0.4);
     border-color: transparent;
 }
+
+/* Scroll Reveal Animations */
+.reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.9s cubic-bezier(0.165, 0.84, 0.44, 1);
+    will-change: transform, opacity;
+}
+
+.reveal-on-scroll.reveal-active {
+    opacity: 1;
+    transform: translateY(0);
+}
