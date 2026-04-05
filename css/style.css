@@ -1049,11 +1049,11 @@ a[href="#projects"].button:hover {
     transform: scale(1.2) rotate(5deg);
 }
 
-/* Focus Effect: Dim others when one is hovered */
-.contact-hub:hover .contact-card:not(:hover) {
-    opacity: 0.6;
+/* Focus Effect: Dim others only when a specific card is hovered */
+.contact-hub:has(.contact-card:hover) .contact-card:not(:hover) {
+    opacity: 0.4;
     transform: scale(0.95);
-    filter: blur(2px);
+    filter: blur(5px);
 }
 
 @media (max-width: 768px) {
