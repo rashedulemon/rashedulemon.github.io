@@ -34,6 +34,56 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => {
         observer.observe(section);
     });
+
+    // Scroll Reveal Intersection Observer
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('reveal-active');
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Activity Toggle Functionality (Show More / Show Less)
+    const showMoreBtn = document.getElementById('show-more-btn');
+    const activityCards = document.querySelectorAll('#activity .activity-card');
+    const initialVisibleCount = 3;
+    let isExpanded = false;
+
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            isExpanded = !isExpanded;
+            
+            activityCards.forEach((card, index) => {
+                if (index >= initialVisibleCount) {
+                    if (isExpanded) {
+                        setTimeout(() => {
+                            card.classList.remove('hidden');
+                            card.classList.add('reveal');
+                        }, (index - initialVisibleCount) * 100);
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('reveal');
+                    }
+                }
+            });
+
+            if (isExpanded) {
+                showMoreBtn.innerHTML = '<i class="fas fa-minus"></i> Show Less';
+            } else {
+                showMoreBtn.innerHTML = '<i class="fas fa-plus"></i> Show More';
+                // Optional: Scroll back to the section header when collapsing
+                document.getElementById('activity').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
 });
 
 // Tabbed Resume Section

@@ -38,6 +38,10 @@
                 <i class="fas fa-file-alt"></i>
                 <span class="tooltip">Resume</span>
             </a>
+            <a href="#activity" class="dock-item" aria-label="Activity">
+                <i class="fas fa-bolt"></i>
+                <span class="tooltip">Activity</span>
+            </a>
             <a href="#contact" class="dock-item" aria-label="Contact">
                 <i class="fas fa-paper-plane"></i>
                 <span class="tooltip">Contact</span>
@@ -86,7 +90,7 @@
     </section>
 
     <main>
-        <section id="about" class="section">
+        <section id="about" class="section reveal-on-scroll">
             <div class="container">
                 <h2>About Me</h2>
 
@@ -167,7 +171,7 @@
             </div>
         </section>
 
-        <section id="projects" class="section bg-light">
+        <section id="projects" class="section bg-light reveal-on-scroll">
             <div class="container">
                 <h2>Projects</h2>
                 <div class="project-grid">
@@ -258,7 +262,7 @@
             </div>
         </section>
 
-        <section id="resume" class="section">
+        <section id="resume" class="section reveal-on-scroll">
             <div class="container">
                 <h2>Resume</h2>
                 <div class="tab-container">
@@ -320,15 +324,24 @@
                             <div class="experience-column">
                                 <h3 class="column-title"><i class="fas fa-hands-helping"></i> Volunteering</h3>
                                 <div class="resume-item">
+                                    <h4>Campus Ambassador</h4>
+                                    <h5>Ulkasemi</h5>
+                                    <p class="date">March 2026 - Present</p>
+                                    <ul>
+                                        <li>Represent Ulkasemi in Varendra University and promote Ulkasemi's programs
+                                            and services to students and faculty.</li>
+                                    </ul>
+                                </div>
+                                <div class="resume-item">
                                     <h4>President</h4>
                                     <h5>Varendra University E-Club</h5>
-                                    <p class="date">2026 - Present</p>
+                                    <p class="date">February 2026 - Present</p>
 
                                 </div>
                                 <div class="resume-item">
                                     <h4>Exicutive Member</h4>
                                     <h5>Lighter Yuoth Foundation</h5>
-                                    <p class="date">2018 - Present</p>
+                                    <p class="date">September 2018 - Present</p>
                                     <ul>
                                         <li>Organized and executed various community service projects.</li>
                                     </ul>
@@ -336,7 +349,7 @@
                                 <div class="resume-item">
                                     <h4>Department Presentative</h4>
                                     <h5>Varendra University Research Club</h5>
-                                    <p class="date">2025 - Present</p>
+                                    <p class="date">October 2025 - January 2026</p>
                                     <ul>
                                         <li>Organized and executed various research projects.</li>
                                     </ul>
@@ -382,7 +395,7 @@
             </div>
         </section>
 
-        <section id="skills" class="section">
+        <section id="skills" class="section reveal-on-scroll">
             <div class="container">
                 <h2>Skills</h2>
                 <div class="skills-grid">
@@ -441,29 +454,75 @@
             </div>
         </section>
 
-        <section id="research" class="section bg-light">
+
+        <section id="activity" class="section reveal-on-scroll">
             <div class="container">
-                <h2>Research & Academic Activities</h2>
-                <ul class="activity-list">
-                    <li>
-                        <i class="fas fa-chalkboard-teacher"
-                            style="color: var(--primary-color); margin-right: 8px;"></i>
-                        <strong>Poster Presentation:</strong> "Optimizing Solar Inverter Efficiency"
-                    </li>
-                    <li>
-                        <i class="fas fa-certificate" style="color: var(--primary-color); margin-right: 8px;"></i>
-                        <strong>Reviewer Certificate:</strong> Student Peer Reviewer for Undergraduate Research Journal.
-                    </li>
-                    <li>
-                        <i class="fas fa-lightbulb" style="color: var(--primary-color); margin-right: 8px;"></i>
-                        <strong>Research Interest:</strong> Renewable Energy Systems, Smart Grids, and IoT applications
-                        in Power Distribution.
-                    </li>
-                </ul>
+                <h2>Recent Activity</h2>
+                <div class="activity-container">
+                    <!-- Activity Card (New) -->
+                    <div class="activity-card reveal-on-scroll">
+                        <div class="activity-content">
+                            <h3>VLSI Course</h3>
+                            <p class="activity-desc">Completed advanced training in digital VLSI design flow and power
+                                analysis.</p>
+                            <p class="activity-date">Completed: April 2026</p>
+                        </div>
+                        <div class="activity-icon-box">
+                            <img src="assets/activity/vlsi_course.png" alt="VLSI Course Icon">
+                            <i class="fas fa-search-plus zoom-hint"></i>
+                        </div>
+                    </div>
+
+                    <!-- Activity Card 2 -->
+                    <div class="activity-card reveal-on-scroll">
+                        <div class="activity-content">
+                            <h3>Ulkasemi Campus Ambassador Onbording</h3>
+                            <p class="activity-desc">Join the Ulkasemi Campus Ambassador program to represent Ulkasemi
+                                in Varendra University and promote Ulkasemi's programs and services to students and
+                                faculty.</p>
+                            <p class="activity-date">Attended: March 2026</p>
+                        </div>
+                        <div class="activity-icon-box">
+                            <img src="assets/activity/ca_ulkasemi.png" alt="Ulkasemi Campus Ambassador Onbording Icon">
+                            <i class="fas fa-search-plus zoom-hint"></i>
+                        </div>
+                    </div>
+
+                    <!-- Activity Card 3 -->
+                    <div class="activity-card reveal-on-scroll">
+                        <div class="activity-content">
+                            <h3>Control Design Onramp with Simulink</h3>
+                            <p class="activity-desc">Completed advanced training in control system design using
+                                Simulink.</p>
+                            <p class="activity-date">Completed: March 2026</p>
+                        </div>
+                        <div class="activity-icon-box">
+                            <i class="fas fa-wave-square"></i>
+                        </div>
+                    </div>
+
+                    <!-- Hidden Activity Cards (Revealed by Show More) -->
+                    <div class="activity-card hidden">
+                        <div class="activity-content">
+                            <h3>AI Prompt Engineer Level 1™</h3>
+                            <p class="activity-desc">Certified in advanced LLM prompting and model interaction.</p>
+                            <p class="activity-date">Certified: July 2025</p>
+                        </div>
+                        <div class="activity-icon-box">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="activity-footer">
+                    <button id="show-more-btn" class="button button-secondary">
+                        <i class="fas fa-plus"></i> Show More
+                    </button>
+                </div>
             </div>
         </section>
 
-        <section id="contact" class="section">
+        <section id="contact" class="section reveal-on-scroll">
             <div class="container">
                 <h2>Let's Connect</h2>
                 <div class="contact-hub">
@@ -507,6 +566,6 @@
 
     <script src="script/main.js"></script>
 </body>
-<script data-goatcounter="https://emonrashedul.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://emonrashedul.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+
 </html>
