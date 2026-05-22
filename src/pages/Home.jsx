@@ -176,7 +176,7 @@ export default function Home() {
                 e.preventDefault();
                 document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-6 py-3 rounded-full bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold flex items-center gap-2 shadow-sm transition-all font-mono text-sm border border-brand-blue/30"
+              className="px-6 py-3 rounded-full bg-brand-blue hover:bg-brand-blue/90 text-white font-semibold flex items-center gap-2 shadow-md transition-all font-mono text-sm border border-brand-blue/30"
             >
               <Cpu className="w-4 h-4" /> View Projects
             </a>
@@ -186,7 +186,7 @@ export default function Home() {
                 e.preventDefault();
                 document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
               }}
-              className="px-6 py-3 rounded-full bg-white hover:bg-slate-50 text-slate-700 font-semibold flex items-center gap-2 transition-all font-mono text-sm border border-slate-200 shadow-sm"
+              className="px-6 py-3 rounded-full liquid-glass-btn hover:liquid-glass-btn-hover text-slate-700 font-semibold flex items-center gap-2 transition-all font-mono text-sm"
             >
               <Send className="w-4 h-4 text-slate-500" /> Let's Connect
             </a>
