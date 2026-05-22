@@ -238,11 +238,48 @@ const getCollectionData = async (colName, localStorageKey) => {
   return JSON.parse(localStorage.getItem(localStorageKey));
 };
 
+function compareDateStrings(aStr, bStr) {
+  const getParts = (str) => {
+    if (!str) return { start: 0, end: 0 };
+    const parts = str.split(/[-–]/).map(s => s.trim());
+    
+    const parseSingle = (s) => {
+      if (!s) return 0;
+      if (s.toLowerCase().includes("present")) return 9999999999999; // Stable high constant for sorting Present
+      const parsed = Date.parse(s);
+      return isNaN(parsed) ? 0 : parsed;
+    };
+    
+    const start = parseSingle(parts[0]);
+    const end = parts.length > 1 ? parseSingle(parts[1]) : start;
+    return { start, end };
+  };
+
+  const a = getParts(aStr);
+  const b = getParts(bStr);
+
+  if (b.end !== a.end) {
+    return b.end - a.end;
+  }
+  return b.start - a.start;
+}
+
 export const fetchProjects = () => getCollectionData("projects", "portfolio_projects");
 export const fetchEducation = () => getCollectionData("education", "portfolio_education");
-export const fetchExperience = () => getCollectionData("experience", "portfolio_experience");
+
+export const fetchExperience = async () => {
+  const data = await getCollectionData("experience", "portfolio_experience");
+  if (!data) return [];
+  return [...data].sort((a, b) => compareDateStrings(a.date, b.date));
+};
+
 export const fetchCertificates = () => getCollectionData("certificates", "portfolio_certificates");
-export const fetchActivities = () => getCollectionData("activities", "portfolio_activities");
+
+export const fetchActivities = async () => {
+  const data = await getCollectionData("activities", "portfolio_activities");
+  if (!data) return [];
+  return [...data].sort((a, b) => compareDateStrings(a.date, b.date));
+};
 
 // --- Contact Form Messages ---
 export const submitMessage = async (messageData) => {

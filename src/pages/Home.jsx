@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* --- ABOUT SECTION (BENTO GRID) --- */}
-      <section id="about" className="relative py-20 z-10 bg-slate-100/50">
+      <section id="about" className="relative py-20 z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900">About Me</h2>
@@ -272,7 +272,7 @@ export default function Home() {
             </BentoCard>
 
             {/* Tech Stack Scroller Card */}
-            <BentoCard colSpan="col-span-1 lg:col-span-2">
+            <BentoCard>
               <h4 className="text-sm font-bold text-slate-500 uppercase tracking-wider font-mono">Technical Toolbox</h4>
               <div className="relative mt-5 overflow-hidden w-full h-16 flex items-center bg-slate-50 border border-slate-200/60 rounded-xl">
                 <div className="tech-track gap-8 px-4">
@@ -294,7 +294,7 @@ export default function Home() {
       </section>
 
       {/* --- PROJECTS SECTION --- */}
-      <section id="projects" className="relative py-20 z-10 bg-white">
+      <section id="projects" className="relative py-20 z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900">Projects</h2>
@@ -466,7 +466,7 @@ export default function Home() {
       </section>
 
       {/* --- RECENT ACTIVITY SECTION --- */}
-      <section id="activity" className="relative py-20 z-10 bg-slate-100/50">
+      <section id="activity" className="relative py-20 z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900">Recent Activity</h2>
@@ -548,7 +548,7 @@ export default function Home() {
       </section>
 
       {/* --- INTERACTIVE LABS SECTION --- */}
-      <section id="labs" className="relative py-20 z-10 bg-white">
+      <section id="labs" className="relative py-20 z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900 flex items-center justify-center gap-2">
@@ -617,7 +617,7 @@ export default function Home() {
       </section>
 
       {/* --- CONTACT SECTION & CONNECT HUB --- */}
-      <section id="contact" className="relative py-20 z-10 bg-slate-100/50">
+      <section id="contact" className="relative py-20 z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-extrabold text-slate-900">Let's Connect</h2>
@@ -743,7 +743,7 @@ export default function Home() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="relative py-8 z-10 border-t border-slate-200 bg-slate-100/80">
+      <footer className="relative py-8 z-10 border-t border-slate-200/80">
         <div className="container mx-auto px-6 text-center text-xs text-slate-500 font-mono leading-relaxed">
           <p>&copy; {new Date().getFullYear()} ⚡ Md. Rashedul Islam Emon. All rights reserved.</p>
           <p className="mt-1 text-[10px] text-slate-400">Rebuilt in React + Tailwind CSS v4 + Cloud Firestore</p>

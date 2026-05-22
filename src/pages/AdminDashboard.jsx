@@ -808,6 +808,17 @@ export default function AdminDashboard() {
                           className="px-4 py-2.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-800 focus:outline-none focus:border-brand-blue/50 focus:bg-white transition-colors resize-none"
                           required
                         />
+                        <div className="text-[10px] text-slate-500 font-mono leading-relaxed mt-1 bg-slate-50 p-3.5 rounded-xl border border-slate-200/80">
+                          <span className="font-bold text-slate-700 block mb-1">Markdown Formatting Reference:</span>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1">
+                            <div>• <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">### Heading</code> for subsections</div>
+                            <div>• <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">**bold text**</code> for bolding</div>
+                            <div>• <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">- Bullet point</code> (or <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">*</code>) for list item</div>
+                            <div>• <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">1. Numbered list</code> for ordered list</div>
+                            <div>• <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">![Caption](filename.jpg)</code> for inline images</div>
+                            <div>• <code className="bg-slate-200/80 px-1 py-0.5 rounded text-slate-850 font-bold">[Link Text](url)</code> for links</div>
+                          </div>
+                        </div>
                       </div>
 
                       <div className="flex gap-3 justify-end pt-4 border-t border-slate-200/80">

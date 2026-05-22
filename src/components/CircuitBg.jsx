@@ -74,10 +74,6 @@ export default function CircuitBg() {
           opacity="0.3" 
         />
         <circle cx="800" cy="220" r="3.5" fill="#3b82f6" className="animate-pulse" />
-
-        {/* Extra VLSI Microchip Pin connections */}
-        <path d="M 680,380 L 680,350 L 760,350 L 760,380" fill="none" stroke="#3b82f6" strokeWidth="1" opacity="0.15" />
-        <path d="M 690,380 L 690,360 L 750,360 L 750,380" fill="none" stroke="#3b82f6" strokeWidth="1" opacity="0.15" />
       </svg>
       
       {/* Top and Bottom Shadows to blend with background */}
