@@ -743,8 +743,8 @@ export default function Home() {
       </section>
 
       {/* --- FOOTER --- */}
-      <footer className="relative py-8 z-10 border-t border-slate-200/80">
-        <div className="container mx-auto px-6 text-center text-xs text-slate-500 font-mono leading-relaxed">
+      <footer className="relative pt-8 pb-24 z-10 border-t border-slate-200/80">
+        <div className="container mx-auto px-6 text-left text-xs text-slate-500 font-mono leading-relaxed">
           <p>&copy; {new Date().getFullYear()} ⚡ Md. Rashedul Islam Emon. All rights reserved.</p>
           <p className="mt-1 text-[10px] text-slate-400">Rebuilt in React + Tailwind CSS v4 + Cloud Firestore</p>
           <p className="mt-3">
