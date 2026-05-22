@@ -489,7 +489,7 @@ export default function AdminDashboard() {
       <CircuitBg />
 
       {/* Admin Floating Banner */}
-      <div className="relative z-10 border-b border-slate-200/80 bg-white/95 backdrop-blur-md sticky top-0 shadow-sm">
+      <div className="sticky top-0 z-30 border-b border-slate-200/80 bg-white/95 backdrop-blur-md shadow-sm">
         <div className="container mx-auto px-6 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 bg-brand-blue/10 rounded-xl border border-brand-blue/30 flex items-center justify-center text-brand-blue">
@@ -525,7 +525,7 @@ export default function AdminDashboard() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 py-8 relative z-10 max-w-6xl">
+      <div className="container mx-auto px-6 pt-8 pb-32 relative z-10 max-w-6xl">
         {/* Alerts */}
         {alertMsg.text && (
           <div className={`p-4 rounded-xl text-xs font-mono font-semibold border mb-6 flex items-center gap-2 ${
