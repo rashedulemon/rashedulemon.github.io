@@ -498,12 +498,27 @@ export default function Home() {
                     </span>
                   </div>
                   {activityIconPath && (
-                    <div className="mt-3 sm:mt-0 w-24 h-16 rounded-lg overflow-hidden border border-slate-200 shrink-0 bg-slate-50 flex items-center justify-center p-1">
+                    <div className="relative group mt-3 sm:mt-0 w-24 h-16 rounded-lg border border-slate-200 shrink-0 bg-slate-50 flex items-center justify-center p-1 cursor-zoom-in">
                       <img 
                         src={activityIconPath} 
                         alt={act.title} 
-                        className="max-w-full max-h-full object-contain"
+                        className="max-w-full max-h-full object-contain transition-transform duration-300 group-hover:scale-105"
                       />
+                      
+                      {/* Zoom Pop-up Overlay */}
+                      <div className="absolute right-0 bottom-full mb-3 w-[75vw] sm:w-[420px] p-2 bg-white border border-slate-200 rounded-2xl shadow-xl z-50 pointer-events-none opacity-0 scale-95 origin-bottom-right transition-all duration-200 transform group-hover:opacity-100 group-hover:scale-100">
+                        <div className="w-full overflow-hidden rounded-xl border border-slate-100 bg-slate-50 flex items-center justify-center">
+                          <img 
+                            src={activityIconPath} 
+                            alt={act.title} 
+                            className="w-full h-auto max-h-72 object-contain"
+                          />
+                        </div>
+                        <div className="mt-2 text-center px-1 pb-1">
+                          <p className="text-[10px] font-mono font-bold text-slate-800 uppercase tracking-wider">{act.title}</p>
+                          <p className="text-[9px] font-mono text-slate-400 mt-0.5">Timeframe: {act.date}</p>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </motion.div>
