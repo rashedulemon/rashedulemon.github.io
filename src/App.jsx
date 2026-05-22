@@ -10,7 +10,7 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div className="bg-[#0b0f19] text-gray-100 min-h-screen selection:bg-brand-cyan/30 selection:text-white">
+      <div className="bg-slate-50 text-slate-800 min-h-screen selection:bg-brand-blue/15 selection:text-slate-900">
         {/* Floating dock navigation */}
         <Navbar />
 

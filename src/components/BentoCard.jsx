@@ -5,7 +5,7 @@ export default function BentoCard({
   className = "", 
   colSpan = "col-span-1", 
   rowSpan = "row-span-1",
-  hoverGlow = "hover:border-brand-cyan/30 hover:shadow-[0_0_20px_rgba(0,240,255,0.07)]"
+  hoverGlow = "hover:border-slate-350 hover:shadow-md border-slate-200/80 shadow-sm"
 }) {
   return (
     <motion.div
