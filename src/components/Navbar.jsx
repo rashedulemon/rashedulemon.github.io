@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <nav className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
-      <div className="flex items-center gap-1 px-3 py-2.5 rounded-full liquid-glass">
+      <div className="flex items-center gap-1.5 px-3 py-2.5 rounded-full bg-white/90 backdrop-blur-xl border border-slate-200/80 shadow-xl">
         {navItems.map((item) => {
           const isAnchor = item.type === "anchor";
           const isActive = isAnchor
@@ -83,13 +83,13 @@ export default function Navbar() {
                 onClick={(e) => handleNavClick(e, item.id)}
                 className={`relative p-2.5 rounded-full transition-all duration-300 group ${
                   isActive
-                    ? "bg-brand-blue text-white shadow-md"
-                    : "text-slate-500 hover:text-slate-800 hover:liquid-glass-btn"
+                    ? "bg-brand-blue text-white shadow-sm"
+                    : "text-slate-500 hover:text-slate-950 hover:bg-slate-100"
                 }`}
                 aria-label={item.label}
               >
                 {item.icon}
-                <span className="absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none px-2.5 py-1 rounded-lg liquid-glass text-[10px] text-slate-700 font-mono whitespace-nowrap">
+                <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none px-2.5 py-1 rounded bg-slate-800 text-[10px] text-white border border-slate-700 font-mono whitespace-nowrap shadow-lg">
                   {item.label}
                 </span>
               </a>
@@ -101,13 +101,13 @@ export default function Navbar() {
                 to={item.path}
                 className={`relative p-2.5 rounded-full transition-all duration-300 group ${
                   isActive
-                    ? "bg-brand-blue text-white shadow-md"
-                    : "text-slate-500 hover:text-slate-800"
+                    ? "bg-brand-blue text-white shadow-sm"
+                    : "text-slate-500 hover:text-slate-950 hover:bg-slate-100"
                 }`}
                 aria-label={item.label}
               >
                 {item.icon}
-                <span className="absolute bottom-full mb-2.5 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none px-2.5 py-1 rounded-lg liquid-glass text-[10px] text-slate-700 font-mono whitespace-nowrap">
+                <span className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none px-2.5 py-1 rounded bg-slate-800 text-[10px] text-white border border-slate-700 font-mono whitespace-nowrap shadow-lg">
                   {item.label}
                 </span>
               </Link>
