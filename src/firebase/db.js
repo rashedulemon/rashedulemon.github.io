@@ -208,12 +208,6 @@ const initLocalStorage = () => {
   if (!localStorage.getItem("portfolio_messages")) {
     localStorage.setItem("portfolio_messages", JSON.stringify([]));
   }
-  if (!localStorage.getItem("portfolio_guestbook")) {
-    localStorage.setItem("portfolio_guestbook", JSON.stringify([
-      { id: "gb-1", name: "Dr. Ali", content: "Great VLSI simulator widget! The MOSFET channel cross-section visualization is very clean.", date: new Date(Date.now() - 86400000 * 3).toISOString() },
-      { id: "gb-2", name: "Sajid", content: "Amazing portfolio Emon. The CMOS inverter simulator shows exactly how PMOS/NMOS conduct current. Best of luck!", date: new Date(Date.now() - 86400000).toISOString() }
-    ]));
-  }
 };
 
 initLocalStorage();
@@ -360,50 +354,6 @@ export const deleteMessage = async (id) => {
   const filtered = messages.filter(m => m.id !== id);
   localStorage.setItem("portfolio_messages", JSON.stringify(filtered));
   return true;
-};
-
-// --- Guestbook ---
-export const fetchGuestbookMessages = async () => {
-  if (isFirebaseSupported) {
-    try {
-      const q = query(collection(db, "guestbook"), orderBy("date", "desc"));
-      const snapshot = await getDocs(q);
-      const items = [];
-      snapshot.forEach(doc => {
-        items.push({ id: doc.id, ...doc.data() });
-      });
-      return items;
-    } catch (e) {
-      console.error("Error fetching guestbook:", e);
-    }
-  }
-
-  const gb = JSON.parse(localStorage.getItem("portfolio_guestbook")) || [];
-  return gb.sort((a, b) => new Date(b.date) - new Date(a.date));
-};
-
-export const postGuestbookMessage = async (name, content) => {
-  const comment = {
-    name,
-    content,
-    date: new Date().toISOString()
-  };
-
-  if (isFirebaseSupported) {
-    try {
-      const docRef = await addDoc(collection(db, "guestbook"), comment);
-      return { id: docRef.id, ...comment };
-    } catch (e) {
-      console.error("Error posting to guestbook:", e);
-    }
-  }
-
-  const gb = JSON.parse(localStorage.getItem("portfolio_guestbook")) || [];
-  const localId = "gb-" + Date.now();
-  const newComment = { id: localId, ...comment };
-  gb.push(newComment);
-  localStorage.setItem("portfolio_guestbook", JSON.stringify(gb));
-  return newComment;
 };
 
 // --- General CMS Actions for Admin Panel ---

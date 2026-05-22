@@ -1327,7 +1327,7 @@ export default function AdminDashboard() {
                       <li>Environment Integration: <span className={isFirebaseSupported ? "text-green-700 font-bold" : "text-amber-600 font-bold"}>{isFirebaseSupported ? "Cloud (Firebase)" : "Offline (Local Storage)"}</span></li>
                       <li>Authorized Administrator: <span className="text-brand-blue font-bold">{ADMIN_EMAIL}</span></li>
                       <li>Current User Session: <span className="text-slate-800 font-semibold">{currentUser ? currentUser.email : "none"}</span></li>
-                      <li>Local Storage Key Cache: <span className="text-slate-500">portfolio_projects, portfolio_experience, portfolio_guestbook</span></li>
+                      <li>Local Storage Key Cache: <span className="text-slate-500">portfolio_projects, portfolio_experience, portfolio_education, portfolio_certificates, portfolio_activities</span></li>
                     </ul>
                   </div>
                 </div>
