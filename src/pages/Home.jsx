@@ -747,6 +747,9 @@ export default function Home() {
         <div className="container mx-auto px-6 text-center text-xs text-slate-500 font-mono leading-relaxed">
           <p>&copy; {new Date().getFullYear()} ⚡ Md. Rashedul Islam Emon. All rights reserved.</p>
           <p className="mt-1 text-[10px] text-slate-400">Rebuilt in React + Tailwind CSS v4 + Cloud Firestore</p>
+          <p className="mt-3">
+            <a href="/#/admin" className="text-[10px] text-slate-300 hover:text-slate-500 transition-colors duration-200 font-mono">⚙ admin</a>
+          </p>
         </div>
       </footer>
     </div>

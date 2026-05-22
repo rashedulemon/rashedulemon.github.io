@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Home, User, Code, FileText, Activity, Mail, Settings } from "lucide-react";
+import { Home, User, Code, FileText, Activity, Mail } from "lucide-react";
 
 export default function Navbar() {
   const location = useLocation();
@@ -63,8 +63,7 @@ export default function Navbar() {
     { type: "anchor", id: "projects", label: "Projects", icon: <Code className="w-5 h-5" /> },
     { type: "anchor", id: "resume", label: "Resume", icon: <FileText className="w-5 h-5" /> },
     { type: "anchor", id: "activity", label: "Activity", icon: <Activity className="w-5 h-5" /> },
-    { type: "anchor", id: "contact", label: "Contact", icon: <Mail className="w-5 h-5" /> },
-    { type: "route", path: "/admin", label: "Dashboard", icon: <Settings className="w-5 h-5" /> }
+    { type: "anchor", id: "contact", label: "Contact", icon: <Mail className="w-5 h-5" /> }
   ];
 
   return (
