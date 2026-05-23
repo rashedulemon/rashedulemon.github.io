@@ -744,7 +744,7 @@ export default function Home() {
 
       {/* --- FOOTER --- */}
       <footer className="relative pt-8 pb-24 z-10 border-t border-slate-200/80">
-        <div className="container mx-auto px-6 text-left text-xs text-slate-500 font-mono leading-relaxed">
+        <div className="container mx-auto px-6 text-center text-xs text-slate-500 font-mono leading-relaxed">
           <p>&copy; {new Date().getFullYear()} Md. Rashedul Islam Emon. All rights reserved.</p>
           <p className="mt-3">
             <a href="/#/admin" className="text-[10px] text-slate-300 hover:text-slate-500 transition-colors duration-200 font-mono">⚙ admin</a>
