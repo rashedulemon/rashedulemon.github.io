@@ -325,11 +325,11 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto">
             {/* Resume Tabs Toggle */}
-            <div className="flex justify-center border-b border-slate-200 mb-8">
-              <div className="flex gap-4">
+            <div className="border-b border-slate-200 mb-8 overflow-x-auto">
+              <div className="flex min-w-max mx-auto w-fit">
                 <button
                   onClick={() => setActiveResumeTab("experience")}
-                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 ${
+                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
                     activeResumeTab === "experience"
                       ? "border-brand-blue text-brand-blue"
                       : "border-transparent text-slate-400 hover:text-slate-700"
@@ -339,7 +339,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setActiveResumeTab("education")}
-                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 ${
+                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
                     activeResumeTab === "education"
                       ? "border-brand-blue text-brand-blue"
                       : "border-transparent text-slate-400 hover:text-slate-700"
@@ -349,7 +349,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setActiveResumeTab("certificates")}
-                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 ${
+                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
                     activeResumeTab === "certificates"
                       ? "border-brand-blue text-brand-blue"
                       : "border-transparent text-slate-400 hover:text-slate-700"
