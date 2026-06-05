@@ -325,11 +325,11 @@ export default function Home() {
 
           <div className="max-w-4xl mx-auto">
             {/* Resume Tabs Toggle */}
-            <div className="flex justify-center border-b border-slate-200 mb-8">
-              <div className="flex gap-4">
+            <div className="border-b border-slate-200 mb-8 overflow-x-auto">
+              <div className="flex min-w-max mx-auto w-fit">
                 <button
                   onClick={() => setActiveResumeTab("experience")}
-                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 ${
+                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
                     activeResumeTab === "experience"
                       ? "border-brand-blue text-brand-blue"
                       : "border-transparent text-slate-400 hover:text-slate-700"
@@ -339,7 +339,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setActiveResumeTab("education")}
-                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 ${
+                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
                     activeResumeTab === "education"
                       ? "border-brand-blue text-brand-blue"
                       : "border-transparent text-slate-400 hover:text-slate-700"
@@ -349,7 +349,7 @@ export default function Home() {
                 </button>
                 <button
                   onClick={() => setActiveResumeTab("certificates")}
-                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 ${
+                  className={`py-3 px-4 text-sm font-mono font-bold border-b-2 transition-all flex items-center gap-2 whitespace-nowrap ${
                     activeResumeTab === "certificates"
                       ? "border-brand-blue text-brand-blue"
                       : "border-transparent text-slate-400 hover:text-slate-700"
@@ -746,6 +746,9 @@ export default function Home() {
       <footer className="relative pt-8 pb-24 z-10 border-t border-slate-200/80">
         <div className="container mx-auto px-6 text-center text-xs text-slate-500 font-mono leading-relaxed">
           <p>&copy; {new Date().getFullYear()} Md. Rashedul Islam Emon. All rights reserved.</p>
+          <p className="mt-3">
+            <a href="/#/admin" className="text-[10px] text-slate-300 hover:text-slate-500 transition-colors duration-200 font-mono">⚙ admin</a>
+          </p>
         </div>
       </footer>
     </div>
