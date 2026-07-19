@@ -24,7 +24,10 @@ import {
   Minus,
   Binary,
   ChevronDown,
-  Mail
+  Mail,
+  Code2,
+  CircuitBoard,
+  Zap
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -311,6 +314,71 @@ export default function Home() {
                 No projects loaded. Seeding database...
               </p>
             )}
+          </div>
+        </div>
+      </section>
+
+      {/* --- SKILLS SECTION --- */}
+      <section id="skills" className="relative py-20 z-10 bg-slate-50/60">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-extrabold text-slate-900">Skills</h2>
+            <div className="h-1 w-12 bg-brand-blue mx-auto mt-2 rounded"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+
+            {/* Programming & Software */}
+            <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-brand-blue/10 border border-brand-blue/20 flex items-center justify-center text-brand-blue">
+                  <Code2 className="w-5 h-5" />
+                </div>
+                <h3 className="text-sm font-bold font-mono uppercase tracking-wider text-slate-700">Programming &amp; Software</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["C / C++", "Python", "MATLAB", "Verilog", "Cadence Virtuoso", "Questa Sim"].map(skill => (
+                  <span key={skill} className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-blue/8 text-brand-blue border border-brand-blue/20 hover:bg-brand-blue/15 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Electronics & Hardware */}
+            <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-600">
+                  <CircuitBoard className="w-5 h-5" />
+                </div>
+                <h3 className="text-sm font-bold font-mono uppercase tracking-wider text-slate-700">Electronics &amp; Hardware</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Embedded Systems", "IoT Protocols", "Digital Logic Design", "Schematic Design", "VLSI"].map(skill => (
+                  <span key={skill} className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-cyan-500/8 text-cyan-700 border border-cyan-500/20 hover:bg-cyan-500/15 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Electrical Power & Analysis */}
+            <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6 flex flex-col gap-4">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-600">
+                  <Zap className="w-5 h-5" />
+                </div>
+                <h3 className="text-sm font-bold font-mono uppercase tracking-wider text-slate-700">Electrical Power &amp; Analysis</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {["Circuit Analysis", "Power Electronics", "Load Flow Analysis"].map(skill => (
+                  <span key={skill} className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/8 text-amber-700 border border-amber-500/20 hover:bg-amber-500/15 transition-colors">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
